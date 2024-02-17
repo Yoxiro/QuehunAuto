@@ -36,7 +36,7 @@ class MyClient(botpy.Client):
             await asyncio.sleep(10)
         _log.info(message.author.username)
 
-        if "/录入排名" in message.content:
+        if "/登记排名" in message.content:
             url = [item.url for item in message.attachments][0]
             await message.reply(content=f"识别时间可能较长，请稍作等待")
             self.ocr.get_url(url)
@@ -46,7 +46,7 @@ class MyClient(botpy.Client):
             self.feishuaccess.value_put_score(paiming)
             await message.reply(content=f"Done!")
 
-        elif "/录入大牌" in message.content:
+        elif "/登记大牌" in message.content:
             url = [item.url for item in message.attachments][0]
             await message.reply(content=f"识别时间可能较长，请稍作等待")
             self.ocr.get_url(url)
